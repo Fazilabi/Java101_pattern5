@@ -1,29 +1,25 @@
 import java.util.Scanner;
 
 public class Main {
-
-    static void minus1(int a, int temp) {
-
-        if (a > 0) {
-            System.out.print(a + " ");
-            minus1(a - 5, temp);
-        } else if (a <= 0) {
-            minus2(a, temp);
+    static void minus1(int number, int temp) {
+        if (number > 0) {
+            System.out.print(number + " ");
+            minus1(number - 5, temp);
+        } else if (number <= 0) {
+            minus2(number, temp);
         }
     }
-
-    static void minus2(int a, int temp) {
-        if (temp >= a) {
-            System.out.print(a + " ");
-            minus2(a + 5, temp);
+    static void minus2(int number, int temp) {
+        if (temp >= number) {
+            System.out.print(number + " ");
+            minus2(number + 5, temp);
         }
     }
-
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Sayı giriniz ");
-        int a = scan.nextInt();
-        int temp = a;
-        minus1(a, temp);
+        System.out.print("Enter number : " );
+        int number = scan.nextInt();
+        int temp = number;
+        minus1(number, temp);
     }
 }
